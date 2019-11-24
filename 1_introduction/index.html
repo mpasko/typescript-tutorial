@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Introduction</h2>
+    <button id="turn-js-on">JS</button>
+    <button id="turn-ts-on">TS</button>
+    <h3>
+      Basic types
+    </h3>
+    <p>
+      <code class="prettyprint javascript">
+        const weAreOnEarth = true;<br/>
+        const numberOfMoons = 1;<br/>
+        const mottoOfTheDay = "we are happy";<br/>
+      </code>
+      <code class="prettyprint typescript">
+        const weAreOnEarth: boolean = true;<br/>
+        const numberOfMoons: number = 1;<br/>
+        const mottoOfTheDay: string = "we are happy";<br/>
+      </code>
+    </p>
+    <h3>
+      Arrays
+    </h3>
+    <p>
+      <code class="prettyprint javascript">
+        const squares = [1,2,4,9];<br/>
+        const propertyDefinition = ["height", 200];<br/>
+        const zoo = ["Zebra", 123, false];<br/>
+      </code>
+      <code class="prettyprint typescript">
+        const squares: Array&lt;number&gt; = [1,2,4,9]; //Regular array<br/>
+        const propertyDefinition: [string, number] = ["height", 200]; //Tuple<br/>
+        const zoo: Array&lt;number|string|boolean&gt; = ["Zebra", 123, false]; //Array of union<br/>
+      </code>
+    </p>
+    <h3>
+      Type: any
+    </h3>
+    <p>
+      <code class="prettyprint javascript">
+        let something = "anything";<br/>
+        something = 1234;<br/>
+        something = false;<br/>
+      </code>
+      <code class="prettyprint typescript">
+        let something: any = "anything";<br/>
+        something = 1234;<br/>
+        something = false;<br/>
+      </code>
+    </p>
+    <h3>
+      Enum
+    </h3>
+    <p>
+      <code class="prettyprint typescript">
+        enum Planet {Venus=2, Earth, Mars}<br/>
+        const current:Planet = Planet.Earth;<br/>
+      </code>
+    </p>
+  </body>
+</html>

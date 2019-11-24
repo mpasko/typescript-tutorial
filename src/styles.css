@@ -1,0 +1,24 @@
+.hidden {
+  display: none;
+}
+
+.flyout-container {
+  position: relative;
+  text-decoration: underline wavy red;
+}
+
+.flyout-content {
+  position: absolute;
+  border-width: 1px;
+  border-color: red;
+  z-index: 1;
+  margin: 0px 10px;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+tab {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 19px;
+}

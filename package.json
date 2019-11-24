@@ -1,0 +1,26 @@
+{
+  "name": "typescript-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpasko/typescript-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpasko/typescript-tutorial/issues"
+  },
+  "homepage": "https://github.com/mpasko/typescript-tutorial#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.31",
+    "jquery": "^3.4.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2"
+  }
+}

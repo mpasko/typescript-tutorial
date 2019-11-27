@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Interface</h2>
+    <button id="show-bad">Bad</button>
+    <button id="show-good">Good</button>
+    <h3>
+      Interface
+    </h3>
+    <p>
+<pre class="prettyprint">
+  interface Point {
+    x: number;
+    y: number;
+  }
+
+  const A: Point = {x:1, y:-3};
+</pre>
+    </p>
+    <h3>
+      Optional parameter
+    </h3>
+    <p>
+<pre class="prettyprint bad">
+  interface Point {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  <span id="attach-1">const A: Point = {x:1, y:-3};</span>
+<div id="flyout-1" class="nocode">
+<pre class="prettyprint">
+  Property 'z' is missing in type '{ x: number; y: number; }' but required in type 'Point'.(2741)
+  input.ts(4, 5): 'z' is declared here.
+</pre>
+</div>
+</pre>
+<pre class="prettyprint good">
+  interface Point {
+    x: number;
+    y: number;
+    z<b>?</b>: number;
+  }
+
+  const A: Point = {x:1, y:-3};
+
+</pre>
+    </p>
+  </body>
+</html>

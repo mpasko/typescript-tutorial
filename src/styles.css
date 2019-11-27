@@ -24,3 +24,9 @@ tab {
 body {
   padding: 20px;
 }
+
+b {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 0.8;
+}

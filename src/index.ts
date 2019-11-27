@@ -1,16 +1,21 @@
 
-const tsOn = jQuery('#turn-ts-on');
-tsOn.click(() => {
-  hideClass('.javascript');
-  showClass('.typescript');
-});
-const jsOn = jQuery('#turn-js-on');
-jsOn.click(() => {
-  hideClass('.typescript');
-  showClass('.javascript');
-});
+function prepareSwitches(onBtn:string, offBtn:string, onClass: string, offClass:string) {
+  const tsOn = jQuery(onBtn);
+  tsOn.click(() => {
+    hideClass(offClass);
+    showClass(onClass);
+  });
+  const jsOn = jQuery(offBtn);
+  jsOn.click(() => {
+    hideClass(onClass);
+    showClass(offClass);
+  });
 
-hideClass('.typescript');
+  hideClass(onClass);
+}
+
+prepareSwitches('#turn-ts-on', '#turn-js-on', '.typescript', '.javascript');
+prepareSwitches('#show-good', '#show-bad', '.good', '.bad');
 
 function hideClass(classId: string) {
   const allContainers = jQuery(classId);

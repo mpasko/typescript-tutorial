@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../src/styles.css"></link>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="../dist/bundle.js" defer></script>
   </head>
   <body>
@@ -13,55 +14,55 @@
       Basic types
     </h3>
     <p>
-      <code class="prettyprint javascript">
-        const weAreOnEarth = true;<br/>
-        const numberOfMoons = 1;<br/>
-        const mottoOfTheDay = "we are happy";<br/>
-      </code>
-      <code class="prettyprint typescript">
-        const weAreOnEarth: boolean = true;<br/>
-        const numberOfMoons: number = 1;<br/>
-        const mottoOfTheDay: string = "we are happy";<br/>
-      </code>
+<pre class="prettyprint javascript">
+  const weAreOnEarth = true;
+  const numberOfMoons = 1;
+  const mottoOfTheDay = "we are happy";
+</pre>
+<pre class="prettyprint typescript">
+  const weAreOnEarth: boolean = true;
+  const numberOfMoons: number = 1;
+  const mottoOfTheDay: string = "we are happy";
+</pre>
     </p>
     <h3>
       Arrays
     </h3>
     <p>
-      <code class="prettyprint javascript">
-        const squares = [1,2,4,9];<br/>
-        const propertyDefinition = ["height", 200];<br/>
-        const zoo = ["Zebra", 123, false];<br/>
-      </code>
-      <code class="prettyprint typescript">
-        const squares: Array&lt;number&gt; = [1,2,4,9]; //Regular array<br/>
-        const propertyDefinition: [string, number] = ["height", 200]; //Tuple<br/>
-        const zoo: Array&lt;number|string|boolean&gt; = ["Zebra", 123, false]; //Array of union<br/>
-      </code>
+<pre class="prettyprint javascript">
+  const squares = [1,2,4,9];
+  const propertyDefinition = ["height", 200];
+  const zoo = ["Zebra", 123, false];
+</pre>
+<pre class="prettyprint typescript">
+  const squares: Array&lt;number&gt; = [1,2,4,9]; //Regular array
+  const propertyDefinition: [string, number] = ["height", 200]; //Tuple
+  const zoo: Array&lt;number|string|boolean&gt; = ["Zebra", 123, false]; //Array of union
+</pre>
     </p>
     <h3>
       Type: any
     </h3>
     <p>
-      <code class="prettyprint javascript">
-        let something = "anything";<br/>
-        something = 1234;<br/>
-        something = false;<br/>
-      </code>
-      <code class="prettyprint typescript">
-        let something: any = "anything";<br/>
-        something = 1234;<br/>
-        something = false;<br/>
-      </code>
+<pre class="prettyprint javascript">
+  let something = "anything";
+  something = 1234;
+  something = false;
+</pre>
+<pre class="prettyprint typescript">
+  let something: any = "anything";
+  something = 1234;
+  something = false;
+</pre>
     </p>
     <h3>
       Enum
     </h3>
     <p>
-      <code class="prettyprint typescript">
-        enum Planet {Venus=2, Earth, Mars}<br/>
-        const current:Planet = Planet.Earth;<br/>
-      </code>
+<pre class="prettyprint typescript">
+  enum Planet {Venus=2, Earth, Mars}
+  const current:Planet = Planet.Earth;
+</pre>
     </p>
   </body>
 </html>

@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../src/styles.css"></link>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="../dist/bundle.js" defer></script>
   </head>
   <body>
@@ -11,31 +12,31 @@
       Forward
     </h3>
     <p>
-      <code class="prettyprint">
-        let coordinate = {<br/>
-        <tab></tab>  x: 12,<br/>
-        <tab></tab>  y: -4<br/>
-        };<br/>
-        <span id="attach-1">coordinate = {y:1};</span> //Error!<br/>
-        <div id="flyout-1">
-            <code class="prettyprint">
-              let type: {<br/>
-              <tab></tab>  x: number;<br/>
-              <tab></tab>  y: number;<br/>
-              }<br/>
-              Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.(2741)<br/>
-              input.ts(1, 20): 'y' is declared here.<br/>
-            </code>
-        </div>
-      </code>
+<pre class="prettyprint">
+    let coordinate = {
+        x: 12,
+        y: -4
+    };
+    <span id="attach-1">coordinate = {y:1};</span> //Error!
+</pre>
+<div id="flyout-1" class="nocode">
+<pre class="prettyprint">
+    let type: {
+        x: number;
+        y: number;
+    }
+    Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.(2741)
+    input.ts(1, 20): 'y' is declared here.
+</pre>
+</div>
     </p>
     <h3>
       Backward
     </h3>
     <p>
-      <code class="prettyprint">
-        //todo<br/>
-      </code>
+<pre class="prettyprint">
+    //todo
+</pre>
     </p>
   </body>
 </html>

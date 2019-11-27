@@ -1,4 +1,3 @@
-import * as jQuery from "jquery";
 
 const tsOn = jQuery('#turn-ts-on');
 tsOn.click(() => {

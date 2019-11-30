@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Tricks&Hacks</h2>
+    <button id="show-bad">Bad</button>
+    <button id="show-good">Good</button>
+    <h3>Skip property checking</h3>
+<pre class="prettyprint bad">
+const someObject={
+  someProperty: "some value 1"
+}
+<span id="attach-1">someObject.nonExistentProperty</span> = "some value 2";
+</pre>
+<div id="flyout-1" class="nocode">
+<pre  class="prettyprint">
+Property 'nonExistentProperty' does not exist on type '{ someProperty: string; }'.(2339)
+</pre>
+</div>
+<pre class="prettyprint good">
+const someObject={
+  someProperty: "some value 1"
+}
+someObject['nonExistentProperty'] = "some value 2";
+</pre>
+
+    <h3>Ignore additional property</h3>
+Declarations:
+<pre class="prettyprint">
+interface Person { 
+  nickname: string
+}
+
+function assign(person: Person) { 
+  alert(`Assigned: ${person.nickname}`);
+}
+</pre>
+Usage:
+<pre class="prettyprint bad">
+assign({
+  nickname: "Bruce",
+  <span id="attach-2">age: 30</span>
+});
+
+</pre>
+<div id="flyout-2" class="nocode">
+<pre class="prettyprint">
+Argument of type '{ nickname: string; age: number; }' is not assignable to parameter of type 'Person'.
+Object literal may only specify known properties, and 'age' does not exist in type 'Person'.(2345)
+</pre>
+</div>
+<pre class="prettyprint good">
+const person = {
+  nickname: "Bruce",
+  age: 30
+};
+assign(person);
+</pre>    
+  </body>
+</html>

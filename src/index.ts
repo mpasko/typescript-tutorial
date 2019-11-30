@@ -28,6 +28,7 @@ function showClass(classId: string) {
 }
 
 attachFlyout('#attach-1', '#flyout-1');
+attachFlyout('#attach-2', '#flyout-2');
 
 function attachFlyout(containerId: string, fluyoutId: string) {
   const flyoutElement = jQuery(fluyoutId);

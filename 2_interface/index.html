@@ -15,12 +15,12 @@
     </h3>
     <p>
 <pre class="prettyprint">
-  interface Point {
-    x: number;
-    y: number;
-  }
+interface Point {
+  x: number;
+  y: number;
+}
 
-  const A: Point = {x:1, y:-3};
+const A: Point = {x:1, y:-3};
 </pre>
     </p>
     <h3>
@@ -28,28 +28,28 @@
     </h3>
     <p>
 <pre class="prettyprint bad">
-  interface Point {
-    x: number;
-    y: number;
-    z: number;
-  }
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+}
 
-  <span id="attach-1">const A: Point = {x:1, y:-3};</span>
+<span id="attach-1">const A: Point = {x:1, y:-3};</span>
 <div id="flyout-1" class="nocode">
 <pre class="prettyprint">
-  Property 'z' is missing in type '{ x: number; y: number; }' but required in type 'Point'.(2741)
-  input.ts(4, 5): 'z' is declared here.
+Property 'z' is missing in type '{ x: number; y: number; }' but required in type 'Point'.(2741)
+input.ts(4, 5): 'z' is declared here.
 </pre>
 </div>
 </pre>
 <pre class="prettyprint good">
-  interface Point {
-    x: number;
-    y: number;
-    z<b>?</b>: number;
-  }
+interface Point {
+  x: number;
+  y: number;
+  z<b>?</b>: number;
+}
 
-  const A: Point = {x:1, y:-3};
+const A: Point = {x:1, y:-3};
 
 </pre>
     </p>

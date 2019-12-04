@@ -13,20 +13,20 @@
     </h3>
     <p>
 <pre class="prettyprint">
-    let coordinate = {
-        x: 12,
-        y: -4
-    };
-    <span id="attach-1">coordinate = {y:1};</span> //Error!
+let coordinate = {
+    x: 12,
+    y: -4
+};
+<span id="attach-1">coordinate = {y:1};</span> //Error!
 </pre>
 <div id="flyout-1" class="nocode">
 <pre class="prettyprint">
-    let type: {
-        x: number;
-        y: number;
-    }
-    Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.(2741)
-    input.ts(1, 20): 'y' is declared here.
+let type: {
+    x: number;
+    y: number;
+}
+Property 'y' is missing in type '{ x: number; }' but required in type '{ x: number; y: number; }'.(2741)
+input.ts(1, 20): 'y' is declared here.
 </pre>
 </div>
     </p>
@@ -35,7 +35,7 @@
     </h3>
     <p>
 <pre class="prettyprint">
-    //todo
+//todo
 </pre>
     </p>
   </body>

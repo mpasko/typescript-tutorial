@@ -4,7 +4,15 @@
 
 .flyout-container {
   position: relative;
+}
+
+.flyout-error {
   text-decoration: underline wavy red;
+}
+
+.flyout-intelisense {
+  text-decoration: underline blue;
+  border-bottom: 1px solid blue;
 }
 
 .flyout-content {

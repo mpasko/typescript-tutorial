@@ -35,8 +35,36 @@ input.ts(1, 20): 'y' is declared here.
     </h3>
     <p>
 <pre class="prettyprint">
-//todo
+interface Point {
+  x: number
+  y: number
+}
+let product : (a: Point, b: Point):number = undefined;
+//...
+product = function(<span id="attach-hint-1">first</span>, <span id="attach-hint-2">second</span>): number {
+  return first.x * second.y - second.x * first.y;
+}
 </pre>
+<div id="flyout-hint-1" class="nocode">
+<pre class="prettyprint">
+Parameter (first) : Point
+
+interface Point {
+  x: number
+  y: number
+}
+</pre>
+</div>
+<div id="flyout-hint-2" class="nocode">
+<pre class="prettyprint">
+Parameter (second) : Point
+
+interface Point {
+  x: number
+  y: number
+}
+</pre>
+</div>
     </p>
   </body>
 </html>

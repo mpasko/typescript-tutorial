@@ -27,15 +27,18 @@ function showClass(classId: string) {
   allContainers.removeClass('hidden');
 }
 
-attachFlyout('#attach-1', '#flyout-1');
-attachFlyout('#attach-2', '#flyout-2');
+attachFlyout('#attach-1', '#flyout-1', 'flyout-error');
+attachFlyout('#attach-2', '#flyout-2', 'flyout-error');
+attachFlyout('#attach-hint-1', '#flyout-hint-1', 'flyout-intelisense');
+attachFlyout('#attach-hint-2', '#flyout-hint-2', 'flyout-intelisense');
 
-function attachFlyout(containerId: string, fluyoutId: string) {
+function attachFlyout(containerId: string, fluyoutId: string, additionalStyle: string) {
   const flyoutElement = jQuery(fluyoutId);
   const containerElement = jQuery(containerId);
   hideClass(fluyoutId);
   flyoutElement.addClass('flyout-content');
   containerElement.addClass('flyout-container');
+  containerElement.addClass(additionalStyle);
   containerElement.mouseenter(() => {
     showClass(fluyoutId);
   });

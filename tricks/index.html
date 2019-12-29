@@ -60,6 +60,49 @@ const person = {
   age: 30
 };
 assign(person);
-</pre>    
+</pre>
+
+<h3>'Unchecked' casting</h3>
+Declarations:
+<pre class="prettyprint">
+interface Person { 
+  name: string;
+}
+
+interface Hobbyst { 
+  hobby: string;
+}
+
+function birth(): Person { 
+  return {
+    name: 'Alex'
+  };
+}    
+</pre>
+Usage:
+<pre class="prettyprint bad">
+let alex: Hobbyst;
+
+alex = <span id="attach-3">birth() as Hobbyst;</span>
+
+console.log(alex.hobby); //To see undefined in console
+</pre>
+<pre class="prettyprint good">
+let alex: Hobbyst;
+
+alex = birth() as any as Hobbyst;
+
+console.log(alex.hobby); //To see undefined in console
+</pre>
+<div id="flyout-3" class="nocode">
+<pre class="prettyprint">
+Conversion of type 'Person' to type 'Hobbyst' may be a mistake because neither type sufficiently overlaps with the other. 
+If this was intentional, convert the expression to 'unknown' first.
+
+Property 'hobby' is missing in type 'Person' but required in type 'Hobbyst'.(2352)
+input.ts(6, 3): 'hobby' is declared here.
+</pre>
+</div>
+<div class="placeholder"></div>
   </body>
 </html>

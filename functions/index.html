@@ -8,52 +8,54 @@
   </head>
   <body>
     <h2>Functions</h2>
-    <button id="turn-js-on">JS</button>
-    <button id="turn-ts-on">TS</button>
     <h3>
       Parameter types and returned values
     </h3>
     <p>
-<pre class="prettyprint javascript">
-  function countVowels(text) {
-    const isVowel = letter => letter.match(/[aiueoy]/i) !== null;
-    return text.split('').filter(isVowel).length;
-  }
-</pre>
-<pre class="prettyprint typescript">
-  function countVowels(text: string): number {
-    const isVowel = (letter: string): boolean => letter.match(/[aiueoy]/i) !== null;
-    return text.split('').filter(isVowel).length;
-  }
+      <button id="turn-js-on-1">JS</button>
+      <button id="turn-ts-on-1">TS</button>
+<pre class="prettyprint">
+function countVowels(text<span class="marker typescript-1">: string</span>)<span class="marker typescript-1">: number</span> {
+  const isVowel = (letter<span class="marker typescript-1">: string</span>)<span class="marker typescript-1">: boolean</span> => letter.match(/[aiueoy]/i) !== null;
+  return text.split('').filter(isVowel).length;
+}
 </pre>
     </p>
     <h3>
       Functional type
     </h3>
     <p>
-<pre class="prettyprint javascript">
-  let callback;
+      <button id="turn-js-on-2">JS</button>
+      <button id="turn-ts-on-2">TS</button>
+<pre class="prettyprint">
+let callback<span class="marker typescript-2">: (event: Event) => Promise</span>;
 
-  //...
+//...
 
-  callback = function (event) {
-    if (event.isMouseEvent) {
-      //...  
-    }
-    return Promise.resolve();
+callback = function (someEvent<span class="marker typescript-2">: Event</span>)<span class="marker typescript-2">: Promise</span> {
+  if (someEvent.isMouseEvent) {
+    //...  
   }
+  return Promise.resolve();
+}
 </pre>
-<pre class="prettyprint typescript">
-  let callback: (event:Event) => Promise;
-
-  //...
-
-  callback = function (event: Event): Promise {
-    if (event.isMouseEvent) {
-      //...  
-    }
-    return Promise.resolve();
-  }
+    </p>
+    <h3>
+      Declaration (by interface)
+    </h3>
+    <p>
+<pre class="prettyprint">
+interface Callback {
+  (someEvent: Event): Promise;
+}
+</pre>
+    </p>
+    <h3>
+      Declaration (by type alias)
+    </h3>
+    <p>
+<pre class="prettyprint">
+type Callback = (someEvent: Event) => Promise;
 </pre>
     </p>
   </body>

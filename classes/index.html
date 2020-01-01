@@ -15,40 +15,22 @@
 TS class differs from JS in access modifiers checked only during compile-time:
 </p>
 <p>
-<pre class="prettyprint typescript">
+<pre class="prettyprint">
 class Person {
-  private name: String;
-  private surname: String;
-
-  constructor(name: String, surname: String) {
-    this.name = name; //Must be initialized in the contructor!
+  <span class="marker typescript">private name: String;
+  private surname: String;</span>
+  <span class="javascript">
+  </span>
+  constructor(name<span class="marker typescript">: String</span>, surname<span class="marker typescript">: String</span>) {
+    this.name = name;<span class="marker typescript"> //Must be initialized in the contructor!</span>
     this.surname = surname;
   }
 
-  public introduceHimself() {
+  <span class="marker typescript">public</span> introduceHimself() {
     alert(`Hi! I am ${this.name} ${this.surname}`)
   }
 
-  meetWith(withPerson: Person) {
-    withPerson.introduceHimself();
-  }
-}
-</pre>
-<pre class="prettyprint javascript">
-class Person {
-
-
-
-  constructor(name, surname) {
-    this.name = name;
-    this.surname = surname;
-  }
-
-  introduceHimself() {
-    alert(`Hi! I am ${this.name} ${this.surname}`);
-  }
-
-  meetWith(withPerson) {
+  meetWith(withPerson<span class="marker typescript">: Person</span>) {
     withPerson.introduceHimself();
   }
 }

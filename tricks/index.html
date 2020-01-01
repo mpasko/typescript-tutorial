@@ -8,10 +8,10 @@
   </head>
   <body>
     <h2>Tricks&Hacks</h2>
-    <button id="show-bad">Bad</button>
-    <button id="show-good">Good</button>
     <h3>Skip property checking</h3>
-<pre class="prettyprint bad">
+    <button id="show-bad-1">Bad</button>
+    <button id="show-good-1">Good</button>
+<pre class="prettyprint bad-1">
 const someObject={
   someProperty: "some value 1"
 }
@@ -22,7 +22,7 @@ const someObject={
 Property 'nonExistentProperty' does not exist on type '{ someProperty: string; }'.(2339)
 </pre>
 </div>
-<pre class="prettyprint good">
+<pre class="prettyprint good-1">
 const someObject={
   someProperty: "some value 1"
 }
@@ -40,8 +40,10 @@ function assign(person: Person) {
   alert(`Assigned: ${person.nickname}`);
 }
 </pre>
-Usage:
-<pre class="prettyprint bad">
+Usage:<br />
+<button id="show-bad-2">Bad</button>
+<button id="show-good-2">Good</button>
+<pre class="prettyprint bad-2">
 assign({
   nickname: "Bruce",
   <span id="attach-2">age: 30</span>
@@ -54,7 +56,7 @@ Argument of type '{ nickname: string; age: number; }' is not assignable to param
 Object literal may only specify known properties, and 'age' does not exist in type 'Person'.(2345)
 </pre>
 </div>
-<pre class="prettyprint good">
+<pre class="prettyprint good-2">
 const person = {
   nickname: "Bruce",
   age: 30

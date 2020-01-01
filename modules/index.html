@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Modules</h2>
+    <p>
+      In Typescript, modules syntax depends on underlying JS system.
+    </p>
+    <h3>CommonJS</h3>
+    <p>
+      Historically first approach when modules syntax hasn't been yet introduced as ECMA standard.
+    </p>
+<pre class="prettyprint">
+export.method = () => {...};
+<hr />
+const someModule = require('some-module');
+someModule.method();
+</pre>
+    <p>
+      Implementation of this pattern is a standard for Node.js:
+    </p>
+<pre class="prettyprint">
+<span class="marker">modules.exports</span>.method = () => {...};
+
+const someModule = require('some-module');
+someModule.method();
+</pre>
+    <h3>AMD</h3>
+    <p>
+      Asynchronous Module Definition -introduced because asynchronous module loading was better suited for web browsers.
+    </p>
+<pre class="prettyprint">
+export.method = () => {...};
+<hr />
+const someModule = define('my-module', ['some-module'], function (someModule) {
+  someModule.method();
+});
+</pre>
+    <p>
+      One of implementation is for instance: <b>RequireJS</b>
+    </p>
+    <h3>ES6</h3>
+    <p>
+      First native implementation.
+    </p>
+<pre class="prettyprint">
+export method = () => {...};
+<hr />
+import { method } from 'some-module';
+method();
+</pre>
+  </body>
+</html>

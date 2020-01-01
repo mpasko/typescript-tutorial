@@ -81,15 +81,17 @@ function birth(): Person {
   };
 }    
 </pre>
-Usage:
-<pre class="prettyprint bad">
+Usage:<br />
+<button id="show-bad-3">Bad</button>
+<button id="show-good-3">Good</button>
+<pre class="prettyprint bad-3">
 let alex: Hobbyst;
 
 alex = <span id="attach-3">birth() as Hobbyst;</span>
 
 console.log(alex.hobby); //To see undefined in console
 </pre>
-<pre class="prettyprint good">
+<pre class="prettyprint good-3">
 let alex: Hobbyst;
 
 alex = birth() as any as Hobbyst;

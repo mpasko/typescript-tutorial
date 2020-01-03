@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Miscellaneous</h2>
+    <h3>Cast</h3>
+<p>
+<pre class="prettyprint">
+const zero = false as number;
+</pre>
+    </p>
+    <h3>Type conjunction</h3>
+    <p>
+      <button id="show-bad-1">Worse</button>
+      <button id="show-good-1">Bad</button>
+<pre class="prettyprint">
+interface Feather {
+  fly():void
+  swim():void
+}
+
+interface Quack {
+  quack():string
+}
+
+let duck: Feather &amp; Quack;
+
+<span id="attach-1" class="bad-1">duck = {};</span><span id="attach-2" class="good-1">duck = {fly: () => void, swim: () => void};</span>
+<div id="flyout-1" class="nocode"><pre>
+Type '{}' is not assignable to type 'Feather &amp; Quack'.
+Type '{}' is missing the following properties from type 'Feather': fly, swim(2322)
+</pre></div><div id="flyout-2" class="nocode"><pre>
+Type '{ fly: () => void; swim: () => void; }' is not assignable to type 'Feather &amp; Quack'.
+Property 'quack' is missing in type '{ fly: () => void; swim: () => void; }'
+but required in type 'Quack'.(2322)
+input.ts(7, 3): 'quack' is declared here.
+</pre></div></pre>
+    </p>
+    <h3>Type definition</h3>
+    <p>
+<pre class="prettyprint">
+typedef Duck = Feather &amp; Quack;
+
+let duck: Duck;
+</pre>
+    </p>
+  </body>
+  </body>
+</html>

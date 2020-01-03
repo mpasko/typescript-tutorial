@@ -14,18 +14,28 @@
 const zero = false as number;
 </pre>
     </p>
-    <h3>Type conjunction</h3>
+    <h3>Type union</h3>
+<pre class="prettyprint">
+let something: number | boolean | string;
+
+something = 0;
+something = false;
+<span id="attach-3">something = {};</span><div id="flyout-3"><pre class="nocode">
+let something: string | number | boolean<hr />
+Type '{}' is not assignable to type 'string | number | boolean'.
+Type '{}' is not assignable to type 'true'.(2322)</pre></div></pre>
+    <h3>Type intersection</h3>
     <p>
       <button id="show-bad-1">Worse</button>
       <button id="show-good-1">Bad</button>
 <pre class="prettyprint">
 interface Feather {
-  fly():void
-  swim():void
+  fly(): void
+  swim(): void
 }
 
 interface Quack {
-  quack():string
+  quack(): string
 }
 
 let duck: Feather &amp; Quack;
@@ -35,13 +45,14 @@ let duck: Feather &amp; Quack;
 Type '{}' is not assignable to type 'Feather &amp; Quack'.
 Type '{}' is missing the following properties from type 'Feather': fly, swim(2322)
 </pre></div><div id="flyout-2" class="nocode"><pre>
-Type '{ fly: () => void; swim: () => void; }' is not assignable to type 'Feather &amp; Quack'.
+Type '{ fly: () => void; swim: () => void; }'
+  is not assignable to type 'Feather &amp; Quack'.
 Property 'quack' is missing in type '{ fly: () => void; swim: () => void; }'
-but required in type 'Quack'.(2322)
+  but required in type 'Quack'.(2322)
 input.ts(7, 3): 'quack' is declared here.
 </pre></div></pre>
     </p>
-    <h3>Type definition</h3>
+    <h3>Type alias</h3>
     <p>
 <pre class="prettyprint">
 typedef Duck = Feather &amp; Quack;
@@ -49,6 +60,6 @@ typedef Duck = Feather &amp; Quack;
 let duck: Duck;
 </pre>
     </p>
-  </body>
+    <div class="placeholder"></div>
   </body>
 </html>

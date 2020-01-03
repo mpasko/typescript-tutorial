@@ -27,10 +27,17 @@ const mottoOfTheDay<span class="marker typescript-1">: string</span> = "we are h
       <button id="turn-js-on-2">JS</button>
       <button id="turn-ts-on-2">TS</button>
 <pre class="prettyprint">
-const squares<span class="marker typescript-2">: Array&lt;number&gt;</span> = [1,2,4,9]; <span class="typescript-2">//Regular array</span>
+const cubes<span class="marker typescript-2">: number[]</span> = [1, 8, 27, 64]; <span class="typescript-2">//Regular array</span>
+const squares<span class="marker typescript-2">: <span id="attach-hint-1">Array&lt;number&gt;</span></span> = [1, 4, 9, 16]; <span class="typescript-2">//Regular array -other syntax</span>
+
 const propertyDefinition<span class="marker typescript-2">: [string, number]</span> = ["height", 200]; <span class="typescript-2">//Tuple</span>
 const zoo<span class="marker typescript-2">: Array&lt;number|string|boolean&gt;</span> = ["Zebra", 123, false]; <span class="typescript-2">//Array of union</span>
 </pre>
+<div id="flyout-hint-1" class="nocode">
+<pre class="prettyprint">
+const squares: number[]
+</pre>
+</div>
     </p>
     <h3>
       Type: any
@@ -74,7 +81,6 @@ type Planet = "Venus" | "Earth" | "Mars";
       Others
     </h3>
     <ul>
-      <li><b>any</b> -any type (also skips type checking)</li>
       <li><b>void</b> -no type</li>
       <li><b>never</b> -as a return type of function never reaching its end</li>
     </ul>

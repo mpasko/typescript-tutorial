@@ -46,3 +46,9 @@ body {
 .marker {
   background-color: palegoldenrod;
 }
+
+td,th {
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+}

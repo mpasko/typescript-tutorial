@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>Accessors</h2>
+<p>
+<pre class="prettyprint">
+const complex = {
+  r: 10,
+  alpha: 3.14, 
+  get x(): number {
+    return this.r * Math.sin(this.alpha); 
+  },
+  set y(newY: number) { 
+    const currentX = this.x;
+    this.r = Math.sqrt(currentX * currentX + newY * newY);
+    this.alpha = Math.atan2(newY, currentX);
+  }
+}
+
+complex<span id="attach-1">.x</span> = () => 0;
+<div id="flyout-1"><pre class="nocode">
+(property) x: number<hr />
+Cannot assign to 'x' because it is a read-only property.(2540)
+</pre></div>
+<span id="attach-2">complex.y</span> = (newY: number) => { };
+<div id="flyout-2"><pre class="nocode">
+(property) y: number<hr/>
+Type '(newY: number) => void' is not assignable to type 'number'.(2322)
+</pre></div></pre>
+</pre>
+    </p>
+    <div class="placeholder"></div>
+  </body>
+</html>

@@ -30,14 +30,61 @@ class Person {
     alert(`Hi! I am ${this.name} ${this.surname}`)
   }
 
-  meetWith(withPerson<span class="marker typescript">: Person</span>) {
+  <span id="attach-hint-1">meetWith(otherPerson<span class="marker typescript">: Person</span>) {</span><div id="flyout-hint-1"><pre class="nocode">
+public Person.meetWith(otherPerson: Person): void
+</pre></div>
     withPerson.introduceHimself();
   }
 }
 </pre>
     </p>
+    <table cellspacing="0" cellpadding="0">
+      <th>Access modifier</th>
+      <th>Accessible within class</th>
+      <th>Accessible in subclass</th>
+      <th>Accessible externally</th>
+      <tr>
+        <td>Public</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Protected</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Private</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+    </table>
+    <h3>Abstract classes</h3>
     <p>
-      In TS, classes can be abstract.
+      In TS, classes can also be abstract.
     </p>
+<pre class="prettyprint">
+abstract class SortingAlgorithm<T> { 
+    abstract comparator(left: T, right: T): number;
+    
+    max(source: Array<T>): T | void { 
+        if (source.length === 0) return;
+        let greater = source[0];
+        for (let index = 1; index <= source.length - 1; ++index) {
+            const candidate = source[index];
+            greater = this.comparator(candidate, greater) > 0 ? candidate : greater;
+        }
+        return greater;
+    }
+
+    sort(source: Array<T>): Array<T> {
+      ...  
+    }
+}
+</pre>
+    <div class = "placeholder"></div>
   </body>
 </html>

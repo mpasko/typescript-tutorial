@@ -34,13 +34,10 @@ interface Point {
   z: number;
 }
 
-<span id="attach-1">const A: Point = {x:1, y:-3};</span>
-<div id="flyout-1" class="nocode">
-<pre class="prettyprint">
+<span id="attach-1">const A: Point = {x:1, y:-3};</span><div id="flyout-1" class="nocode"><pre class="prettyprint">
 Property 'z' is missing in type '{ x: number; y: number; }' but required in type 'Point'.(2741)
 input.ts(4, 5): 'z' is declared here.
-</pre>
-</div>
+</pre></div>
 </pre>
 <pre class="prettyprint good">
 interface Point {
@@ -50,8 +47,41 @@ interface Point {
 }
 
 const A: Point = {x:1, y:-3};
-
 </pre>
     </p>
+    <h3>Index signature of custom property</h3>
+    <p>
+<pre class="prettyprint">
+interface Dictionary {
+  [property: string]: string;
+}
+
+const dict: Dictionary = {};
+
+dict[5] = 'Five!';
+<span id="attach-2">dict.name = 4;</span>
+</pre>
+<div id="flyout-2"><pre class="nocode">
+string
+Type '4' is not assignable to type 'string'.(2322)
+</pre></div>
+    </p>
+    <h3>Readonly</h3>
+    <p>
+<pre class="prettyprint">
+interface Person {
+  readonly name: string;
+}
+
+const worker: Person = { name: 'Josh' };
+
+<span id="attach-3">worker.name = 'Joshua';</span>
+</pre>
+<div id="flyout-3"><pre class="nocode">
+(property) Person.name: string
+Cannot assign to 'name' because it is a read-only property.(2540)
+</pre></div>
+    </p>
+    <div class="placeholder"></div>
   </body>
 </html>

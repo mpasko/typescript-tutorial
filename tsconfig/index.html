@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/styles.css"></link>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <h2>tsconfig.json</h2>
+<p>
+<pre class="prettyprint">
+{
+  "compilerOptions": {
+      "module": "system",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "outFile": "../../built/local/tsc.js",
+      "sourceMap": true
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+      "node_modules",
+      "**/*.spec.ts"
+  ]
+}
+</pre>
+    <h3>compilerOptions</h3>
+    <table>
+      <th>Property</th>
+      <th>Meaning</th>
+      <tr>
+        <td>alwaysStrict</td>
+        <td>Parse in strict mode, add "use strict" to each file</td>
+      </tr>
+      <tr>
+        <td>declaration</td>
+        <td>Allows to automatically generate *.d.ts files</td>
+      </tr>
+      <tr>
+        <td>downlevelIteration</td>
+        <td>Provide full support for iterables in for..of, spread and destructuring when targeting ES5 or ES3.</td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td>Target ES version eg. es2015, es2017 etc.</td>
+      </tr>
+      <tr>
+        <td>noImplicitAny</td>
+        <td>Raise error on expressions and declarations with an implied any type.</td>
+      </tr>
+      <tr>
+        <td>module</td>
+        <td>
+          Module code generation, eg. ES6, AMD, CommonJS etc.
+          <a href="../index.html" target="_blank">
+            see next chapter for more inforation
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>moduleResolution</td>
+        <td>
+          Module resolution, eg. ES6, AMD, CommonJS etc.
+          <a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html" target="_blank">
+            see documentation for details
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>allowUmdGlobalAccess</td>
+        <td>
+          Allow accessing
+          <a href="https://github.com/umdjs/umd">UMD</a>
+          globals from modules.
+          <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html">
+            More details here.
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>allowUnreachableCode</td>
+        <td>Do not report errors on unreachable code.</td>
+      </tr>
+      <tr>
+        <td>baseUrl or paths</td>
+        <td>Base paths for nonrelative module names</td>
+      </tr>
+      <tr>
+        <td>typeRoots</td>
+        <td>Locations (base paths) of type definitions</td>
+      </tr>
+      <tr>
+        <td>types</td>
+        <td>Names of *.d.ts files with type definitions</td>
+      </tr>
+      <tr>
+        <td>experimentalDecorators</td>
+        <td>Allows using decorators -it was experimental feature introduced in ES7</td>
+      </tr>
+      <tr>
+        <td>lib</td>
+        <td>List of libraries (JS features) used in code. eg. esnext.Array, es2018.promise etc...</td>
+      </tr>
+      <tr>
+        <td>noEmitOnError</td>
+        <td>Don't generate outputs when errors found.</td>
+      </tr>
+      <tr>
+        <td>sourceMap</td>
+        <td>Generates corresponding .map file.</td>
+      </tr>
+    </table>
+    <h3>include/exclude or files</h3>
+    <p>Specifies which files should be compiled.</p>
+    <div class="placeholder"></div>
+  </body>
+</html>
